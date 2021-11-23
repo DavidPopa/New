@@ -21,17 +21,16 @@ const App = () => {
   };
 
   const countEvents = (dataEvents) => {
-    dataEvents.map((nr) => {
-      Object.values(nr).map((value) => {
+    dataEvents.map((event) => {
+      Object.values(event).map((value) => {
         if (typeof value === "object") {
-          const numberValue = Object.keys(value);
-          return numberValue.length;
+          console.log(value);
+          return value;
         }
       });
     });
   };
-  countEvents(dataEvents);
-  // console.log(countEvents(dataEvents));
+
   return (
     <div className="App">
       <table>
@@ -40,7 +39,7 @@ const App = () => {
             {getData(data).map((val, index) => (
               <td key={index}>{val}</td>
             ))}
-            <td>Nr events</td>
+            <td>Name events</td>
             <td>Length</td>
           </tr>
         </thead>
@@ -59,6 +58,7 @@ const App = () => {
                     </td>
                   );
                 })}
+
                 <td></td>
                 <td></td>
               </tr>

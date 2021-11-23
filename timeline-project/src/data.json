@@ -14,7 +14,10 @@
     "id": 2,
     "events": {
       "name": "event2",
-      "type": "test2"
+      "type": "test2",
+      "dsa": "asd",
+      "dsaa": "asd",
+      "daasa": "asd"
     },
     "fullName": "Jessica warren",
     "address": "4 tall town",
