@@ -20,16 +20,16 @@ const App = () => {
     return unique;
   };
 
-  const countEvents = (dataEvents) => {
-    dataEvents.map((event) => {
-      Object.values(event).map((value) => {
-        if (typeof value === "object") {
-          console.log(value);
-          return value;
-        }
-      });
-    });
-  };
+  // const countEvents = (dataEvents) => {
+  //   dataEvents.map((event) => {
+  //     Object.values(event).map((value) => {
+  //       if (typeof value === "object") {
+  //         console.log(value);
+  //         return value;
+  //       }
+  //     });
+  //   });
+  // };
 
   return (
     <div className="App">
@@ -39,7 +39,6 @@ const App = () => {
             {getData(data).map((val, index) => (
               <td key={index}>{val}</td>
             ))}
-            <td>Name events</td>
             <td>Length</td>
           </tr>
         </thead>
@@ -56,10 +55,9 @@ const App = () => {
                           })
                         : val}
                     </td>
+                    // <td></td>
                   );
                 })}
-
-                <td></td>
                 <td></td>
               </tr>
             );

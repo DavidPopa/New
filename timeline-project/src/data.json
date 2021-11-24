@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "events": {
+    "Name events": {
       "name": "event1",
       "type": "test"
     },
@@ -12,7 +12,7 @@
   },
   {
     "id": 2,
-    "events": {
+    "Name events": {
       "name": "event2",
       "type": "test2",
       "dsa": "asd",
@@ -26,7 +26,7 @@
   },
   {
     "id": 3,
-    "events": {
+    "Name events": {
       "name": "event3",
       "type": "test3"
     },
@@ -37,7 +37,7 @@
   },
   {
     "id": 4,
-    "events": {
+    "Name events": {
       "name": "event4",
       "type": "test4"
     },
@@ -48,7 +48,7 @@
   },
   {
     "id": 5,
-    "events": {
+    "Name events": {
       "name": "event5",
       "type": "test5"
     },
