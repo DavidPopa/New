@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import "./App.css";
 import data from "./data.json";
 const App = () => {
   const [dataInfos] = useState(data);
-  const [dataEvents] = useState(data);
   const getData = (data) => {
     let array = [];
     for (let i in data) {
@@ -34,15 +33,28 @@ const App = () => {
               <tr>
                 {Object.values(dataInfo).map((val) => {
                   return (
-                    <td>
-                      {typeof val === "object"
-                        ? Object.values(val).map((v) => {
-                            return <div>{`${v}`}</div>;
-                          })
-                        : val}
-                    </td>
+                    <React.Fragment>
+                      <td>
+                        {typeof val === "object"
+                          ? Object.values(val).map((v, i) => {
+                              return <div>{`${v}`}</div>;
+                            })
+                          : val}
+                      </td>
+                    </React.Fragment>
                   );
                 })}
+                <td>
+                  {Object.values(dataInfo).map((v) => {
+                    if (typeof v === "object") {
+                      let length0fObject = 0;
+                      for (let key in v) {
+                        length0fObject++;
+                      }
+                      return `${length0fObject}`;
+                    }
+                  })}
+                </td>
               </tr>
             );
           })}
