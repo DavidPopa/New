@@ -1,9 +1,6 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import data from "./data.json";
-import ReadData from "./components/ReadData";
-// import Timeline from "./components/Timeline";
-// de facut modal + o functie care nr cate event-uri sunt
 const App = () => {
   const [dataInfos] = useState(data);
   const [dataEvents] = useState(data);
@@ -19,17 +16,6 @@ const App = () => {
     const unique = array.filter((v, i) => array.indexOf(v) === i);
     return unique;
   };
-
-  // const countEvents = (dataEvents) => {
-  //   dataEvents.map((event) => {
-  //     Object.values(event).map((value) => {
-  //       if (typeof value === "object") {
-  //         console.log(value);
-  //         return value;
-  //       }
-  //     });
-  //   });
-  // };
 
   return (
     <div className="App">
@@ -55,10 +41,8 @@ const App = () => {
                           })
                         : val}
                     </td>
-                    // <td></td>
                   );
                 })}
-                <td></td>
               </tr>
             );
           })}
