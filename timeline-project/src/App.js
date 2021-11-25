@@ -1,6 +1,7 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import data from "./data.json";
+import Modal from "./Modal";
 const App = () => {
   const [dataInfos] = useState(data);
   const getData = (data) => {
@@ -15,7 +16,6 @@ const App = () => {
     const unique = array.filter((v, i) => array.indexOf(v) === i);
     return unique;
   };
-
   return (
     <div className="App">
       <table>
@@ -31,17 +31,15 @@ const App = () => {
           {dataInfos.map((dataInfo) => {
             return (
               <tr>
-                {Object.values(dataInfo).map((val) => {
+                {Object.values(dataInfo).map((val, index) => {
                   return (
-                    <React.Fragment>
-                      <td>
-                        {typeof val === "object"
-                          ? Object.values(val).map((v, i) => {
-                              return <div>{`${v}`}</div>;
-                            })
-                          : val}
-                      </td>
-                    </React.Fragment>
+                    <td>
+                      {typeof val === "object"
+                        ? Object.values(val).map((v, i) => {
+                            return <div> {`${v}`}</div>;
+                          })
+                        : val}
+                    </td>
                   );
                 })}
                 <td>
@@ -54,6 +52,9 @@ const App = () => {
                       return `${length0fObject}`;
                     }
                   })}
+                </td>
+                <td>
+                  <button></button>
                 </td>
               </tr>
             );
