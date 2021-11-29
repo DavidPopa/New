@@ -13,9 +13,9 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    border: "0.2rem solid #000",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: theme.spacing(40, 50, 30, 30),
   },
 }));
 
@@ -26,17 +26,15 @@ export default function AnimatedModal() {
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
 
   return (
     <div>
-      <Button color="secondary" onClick={handleOpen}>
+      <Button className={classes.bla} onClick={handleOpen}>
         Timeline
       </Button>
-
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
