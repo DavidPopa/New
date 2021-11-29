@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import data from "./data.json";
-import Modal from "./Modal";
+import AnimatedModal from "./Modal";
 const App = () => {
   const [dataInfos] = useState(data);
   const getData = (data) => {
@@ -25,18 +25,25 @@ const App = () => {
               <td key={index}>{val}</td>
             ))}
             <td>Length</td>
+            <td>Button</td>
           </tr>
         </thead>
         <tbody>
           {dataInfos.map((dataInfo) => {
             return (
               <tr>
-                {Object.values(dataInfo).map((val, index) => {
+                {Object.values(dataInfo).map((val) => {
                   return (
                     <td>
                       {typeof val === "object"
-                        ? Object.values(val).map((v, i) => {
-                            return <div> {`${v}`}</div>;
+                        ? Object.values(val).map((v) => {
+                            if (typeof v === "object") {
+                              Object.values(v).map((valori) => {
+                                return <div> {`${valori}`}</div>;
+                              });
+                            } else {
+                              return <div> {`${v}`}</div>;
+                            }
                           })
                         : val}
                     </td>
@@ -54,7 +61,7 @@ const App = () => {
                   })}
                 </td>
                 <td>
-                  <button></button>
+                  <button>{AnimatedModal()}</button>
                 </td>
               </tr>
             );

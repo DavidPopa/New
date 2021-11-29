@@ -35,10 +35,20 @@
   },
   {
     "id": 4,
-    "nameEvents": {
-      "name": "event4",
-      "type": "test4"
-    },
+    "nameEvents": [
+      {
+        "name": "event4",
+        "type": "test4"
+      },
+      {
+        "name": "event5",
+        "type": "test5"
+      },
+      {
+        "name": "event5",
+        "type": "test5"
+      }
+    ],
     "fullName": "Jeremy Clark",
     "address": "333 miltown manor",
     "phoneNumber": "011-962-111",
@@ -46,10 +56,20 @@
   },
   {
     "id": 5,
-    "nameEvents": {
-      "name": "event5",
-      "type": "test5"
-    },
+    "nameEvents": [
+      {
+        "name": "event5",
+        "type": "test5"
+      },
+      {
+        "name": "event5",
+        "type": "test5"
+      },
+      {
+        "name": "event5",
+        "type": "test5"
+      }
+    ],
     "fullName": "Raymond Edwards",
     "address": "99 blue acres",
     "phoneNumber": "3231-962-7516",
