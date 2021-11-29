@@ -37,18 +37,13 @@ const App = () => {
                     <td>
                       {typeof val === "object"
                         ? Object.values(val).map((v) => {
-                            // console.log(typeof v);
-                            // console.log(v);
-
+                            console.log(typeof val);
+                            console.log(val);
                             if (typeof v === "object") {
+                              // console.log(typeof v);
+                              // console.log(v);
                               Object.values(v).map((valori, i) => {
-                                return (
-                                  <div key={i}>
-                                    {" "}
-                                    {`${valori}`}
-                                    {console.log(valori)};
-                                  </div>
-                                );
+                                return <div key={i}>{`${valori}`}</div>;
                               });
                             } else {
                               return <div> {`${v}`}</div>;
