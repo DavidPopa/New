@@ -1,11 +1,13 @@
 [
   {
     "id": 1,
-    "nameEvents": {
-      "name": "event1",
-      "type": "test1",
-      "da": "da"
-    },
+    "nameEvents": [
+      {
+        "name": "event1",
+        "type": "test1",
+        "da": "da"
+      }
+    ],
     "fullName": "Jenny Chan",
     "address": "3 waterfoot road",
     "phoneNumber": "333-962-7516",
@@ -13,10 +15,12 @@
   },
   {
     "id": 2,
-    "nameEvents": {
-      "name": "event2",
-      "type": "test2"
-    },
+    "nameEvents": [
+      {
+        "name": "event2",
+        "type": "test2"
+      }
+    ],
     "fullName": "Jessica warren",
     "address": "4 tall town",
     "phoneNumber": "011-211-7516",
@@ -24,10 +28,12 @@
   },
   {
     "id": 3,
-    "nameEvents": {
-      "name": "event3",
-      "type": "test3"
-    },
+    "nameEvents": [
+      {
+        "name": "event3",
+        "type": "test3"
+      }
+    ],
     "fullName": "Tony Frank",
     "address": "11 lesly road",
     "phoneNumber": "788-962-7516",

@@ -32,7 +32,7 @@ export default function AnimatedModal() {
 
   return (
     <div>
-      <Button className={classes.bla} onClick={handleOpen}>
+      <Button variant="contained" color="success" onClick={handleOpen}>
         Timeline
       </Button>
       <Modal

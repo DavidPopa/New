@@ -37,8 +37,8 @@ const App = () => {
                     <td>
                       {typeof val === "object"
                         ? Object.values(val).map((v) => {
-                            console.log(typeof val);
-                            console.log(val);
+                            // console.log(typeof val);
+                            // console.log(val);
                             if (typeof v === "object") {
                               // console.log(typeof v);
                               // console.log(v);
