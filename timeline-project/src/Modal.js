@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: "0.2rem solid #000",
+    border: "0.2rem  #000",
+    borderRadius: "10px",
     width: "90%",
     height: "90%",
     boxShadow: theme.shadows[5],
@@ -24,7 +25,13 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     right: "0",
     top: "-0.05rem",
-    // backgroundColor: "red",
+    backgroundColor: "red",
+    borderRadius: "0px 10px 0px 0px",
+  },
+  btnBig: {
+    "& > *": {
+      margin: theme.spacing(1),
+    },
   },
 }));
 
@@ -41,7 +48,9 @@ export default function AnimatedModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Timeline</Button>
+      <Button color="primary" className={classes.btnBig} onClick={handleOpen}>
+        Timeline
+      </Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -53,9 +62,9 @@ export default function AnimatedModal() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <button className={classes.btn} onClick={handleClose}>
+            <Button className={classes.btn} onClick={handleClose}>
               <AiOutlineClose size="1rem" />
-            </button>
+            </Button>
             <h2>Lorem ipsum</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
