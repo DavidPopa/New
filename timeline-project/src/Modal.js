@@ -14,8 +14,9 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor: theme.palette.background.paper,
     border: "0.2rem solid #000",
+    height: "95%",
+    width: "95%",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(40, 50, 30, 30),
   },
 }));
 
