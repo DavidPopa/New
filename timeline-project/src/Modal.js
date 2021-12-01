@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
+import { AiOutlineClose } from "react-icons/ai";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -14,9 +15,16 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor: theme.palette.background.paper,
     border: "0.2rem solid #000",
-    height: "95%",
-    width: "95%",
+    width: "90%",
+    height: "90%",
     boxShadow: theme.shadows[5],
+    position: "relative",
+  },
+  btn: {
+    position: "absolute",
+    right: "0",
+    top: "-0.05rem",
+    // backgroundColor: "red",
   },
 }));
 
@@ -33,9 +41,7 @@ export default function AnimatedModal() {
 
   return (
     <div>
-      <Button variant="contained" color="success" onClick={handleOpen}>
-        Timeline
-      </Button>
+      <Button onClick={handleOpen}>Timeline</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -47,11 +53,17 @@ export default function AnimatedModal() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
+            <button className={classes.btn} onClick={handleClose}>
+              <AiOutlineClose size="1rem" />
+            </button>
             <h2>Lorem ipsum</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
               accumsan odio enim.
             </p>
+            <footer>
+              <p>valeu</p>
+            </footer>
           </div>
         </Fade>
       </Modal>

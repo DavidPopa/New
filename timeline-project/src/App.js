@@ -1,3 +1,4 @@
+import { keys } from "@material-ui/core/styles/createBreakpoints";
 import React, { useState } from "react";
 import "./App.css";
 import data from "./data.json";
@@ -37,17 +38,12 @@ const App = () => {
                     <td>
                       {typeof val === "object"
                         ? Object.values(val).map((v) => {
-                            // console.log(typeof val);
-                            // console.log(val);
-                            if (typeof v === "object") {
-                              // console.log(typeof v);
-                              // console.log(v);
-                              Object.values(v).map((valori, i) => {
-                                return <div key={i}>{`${valori}`}</div>;
-                              });
-                            } else {
-                              return <div> {`${v}`}</div>;
-                            }
+                            console.log(v);
+                            Object.entries(v).map((entry) => {
+                              let value = entry[1];
+                              // console.log(value);
+                              return <div>{`${value}`}</div>;
+                            });
                           })
                         : val}
                     </td>
