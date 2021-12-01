@@ -42,7 +42,7 @@ const App = () => {
                         ? Object.values(val).map((v) => {
                             Object.entries(v).map((entry) => {
                               let value = entry[1];
-                              // console.log(value);
+                              console.log(value);
                               return <div>{`${value}`}</div>;
                             });
                           })

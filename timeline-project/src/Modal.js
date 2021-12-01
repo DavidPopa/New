@@ -49,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AnimatedModal(props) {
-  console.log(props.dataInfo);
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
