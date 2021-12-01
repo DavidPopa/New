@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "15%",
   },
   footer: {
-    paddingTop: "15%",
+    paddingTop: "10%",
   },
 }));
 
@@ -78,8 +78,8 @@ export default function AnimatedModal(props) {
               <AiOutlineClose size="1rem" />
             </Button>
             <header>
-              <h2>Lorem ipsum</h2>
-              <h1>{props.id}</h1>
+              <h1>Lorem ipsum</h1>
+              <h2>{props.id}</h2>
             </header>
             <div className={classes.body}>
               <p>
