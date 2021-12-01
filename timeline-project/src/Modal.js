@@ -24,18 +24,32 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     position: "absolute",
     right: "0",
-    top: "-0.05rem",
-    backgroundColor: "red",
+    top: "-0.03rem",
+
     borderRadius: "0px 10px 0px 0px",
+    "&:hover": {
+      backgroundColor: "red",
+    },
   },
   btnBig: {
     "& > *": {
       margin: theme.spacing(1),
     },
+    "&:hover": {
+      backgroundColor: "#fff",
+      color: "#3c52b2",
+    },
+  },
+  body: {
+    paddingTop: "15%",
+  },
+  footer: {
+    paddingTop: "15%",
   },
 }));
 
-export default function AnimatedModal() {
+export default function AnimatedModal(props) {
+  console.log(props.dataInfo);
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -45,7 +59,6 @@ export default function AnimatedModal() {
   const handleClose = () => {
     setOpen(false);
   };
-
   return (
     <div>
       <Button color="primary" className={classes.btnBig} onClick={handleOpen}>
@@ -65,12 +78,18 @@ export default function AnimatedModal() {
             <Button className={classes.btn} onClick={handleClose}>
               <AiOutlineClose size="1rem" />
             </Button>
-            <h2>Lorem ipsum</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-              accumsan odio enim.
-            </p>
-            <footer>
+            <header>
+              <h2>Lorem ipsum</h2>
+              <h1>{props.id}</h1>
+            </header>
+            <div className={classes.body}>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                accumsan odio enim.
+                <h1>{props.fullName}</h1>
+              </p>
+            </div>
+            <footer className={classes.footer}>
               <p>valeu</p>
             </footer>
           </div>

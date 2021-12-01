@@ -1,10 +1,11 @@
-import { keys } from "@material-ui/core/styles/createBreakpoints";
 import React, { useState } from "react";
 import "./App.css";
 import data from "./data.json";
 import AnimatedModal from "./Modal";
+import Button from "@material-ui/core/Button";
+
 const App = () => {
-  const [dataInfos] = useState(data);
+  const [dataInfos, setDataInfos] = useState(data);
   const getData = (data) => {
     let array = [];
     for (let i in data) {
@@ -17,6 +18,7 @@ const App = () => {
     const unique = array.filter((v, i) => array.indexOf(v) === i);
     return unique;
   };
+
   return (
     <div className="App">
       <table>
@@ -38,7 +40,6 @@ const App = () => {
                     <td>
                       {typeof val === "object"
                         ? Object.values(val).map((v) => {
-                            console.log(v);
                             Object.entries(v).map((entry) => {
                               let value = entry[1];
                               // console.log(value);
@@ -61,7 +62,14 @@ const App = () => {
                   })}
                 </td>
                 <td>
-                  <button>{AnimatedModal()}</button>
+                  <Button>
+                    {
+                      <AnimatedModal
+                        id={dataInfo.id}
+                        fullName={dataInfo.fullName}
+                      ></AnimatedModal>
+                    }
+                  </Button>
                 </td>
               </tr>
             );
