@@ -88,6 +88,7 @@ export default function AnimatedModal(props) {
                 <h1>{props.fullName}</h1>
               </p>
             </div>
+            {/* TODO: add footer as a separate container with background contrast color*/}
             <footer className={classes.footer}>
               <p>valeu</p>
             </footer>

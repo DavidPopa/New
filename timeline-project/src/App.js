@@ -19,6 +19,17 @@ const App = () => {
     return unique;
   };
 
+  const addAttributes = (data) => {
+    // this function will add the length of the object as a new attribute and a concatenation of all the titles from events in another string
+    console.log(data)
+
+    let newData = {}
+
+    return newData
+
+
+  }
+
   return (
     <div className="App">
       <table>
@@ -27,17 +38,19 @@ const App = () => {
             {getData(data).map((val, index) => (
               <td key={index}>{val}</td>
             ))}
-            <td>Length</td>
-            <td>Button</td>
+            {/* <td>Length</td> */}
+            <td>Actions</td>
           </tr>
         </thead>
         <tbody>
           {dataInfos.map((dataInfo) => {
             return (
               <tr>
+                {/* FIXME:reduce to a single map */}
                 {Object.values(dataInfo).map((val) => {
                   return (
                     <td>
+                      {/* TODO: remove typeof check */}
                       {typeof val === "object"
                         ? Object.values(val).map((v) => {
                             Object.entries(v).map((entry) => {
@@ -48,17 +61,7 @@ const App = () => {
                     </td>
                   );
                 })}
-                <td>
-                  {Object.values(dataInfo).map((v) => {
-                    if (typeof v === "object") {
-                      let length0fObject = 0;
-                      for (let key in v) {
-                        length0fObject++;
-                      }
-                      return `${length0fObject}`;
-                    }
-                  })}
-                </td>
+                {/* TODO: add length property to object before it is being rendered, as well as creating another atribute which would contain the concatenation of the strings from "events" */}
                 <td>
                   <Button>
                     {
