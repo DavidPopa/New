@@ -41,9 +41,7 @@ const App = () => {
                       {typeof val === "object"
                         ? Object.values(val).map((v) => {
                             Object.entries(v).map((entry) => {
-                              let value = entry[1];
-                              console.log(entry[1]);
-                              return <div>{`${value}`}</div>;
+                              return entry[1];
                             });
                           })
                         : val}
